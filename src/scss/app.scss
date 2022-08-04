@@ -1,0 +1,389 @@
+/* By Athlon Front-End Team */
+
+/* Core variables */
+@import "base/vars";
+
+/* CSS Reset */
+@import "base/reset";
+
+/* CSS print */
+@import "base/print";
+
+/* Fonts */
+@import "base/fonts";
+
+/* Mixins, helpers and functions */
+@import "base/mixins";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header"
+    "main main main main"
+    "contact contact contact contact"
+    "footer footer footer footer";
+}
+
+h1 {
+  font-family: Muli;
+  font-size: 30px;
+}
+
+p {
+  font-family: Muli;
+  font-size: 14px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  grid-area: header;
+  height: auto;
+  .nav {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .nav__upper {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      color: rgb(255, 255, 255);
+      font-family: Linearicons-Free;
+      background-color: rgb(46, 46, 46);
+      height: 30px;
+      padding-top: 5px;
+      p {
+        padding-inline-end: 1em;
+      }
+      a {
+        padding-inline-end: 5vw;
+      }
+    }
+
+    .nav__links {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      color: white;
+      background: rgb(0, 0, 0);
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.6012605725884104) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      img {
+        margin-block-start: 20px;
+        height: 61px;
+        width: 50px;
+        margin-inline-end: 48px;
+      }
+      li {
+        font-family: Muli;
+        text-transform: uppercase;
+        font-size: 14px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.nav__links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 85%;
+    li {
+      padding-inline-end: 2em;
+    }
+  }
+}
+
+main {
+  grid-area: main;
+  background-color: aquamarine;
+  height: auto;
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 110vh;
+    background-image: url("../images/Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .hero__text {
+      width: 60vw;
+      text-align: center;
+      padding-block-end: 80px;
+      h1 {
+        color: #444444;
+      }
+      p {
+        padding: 1em;
+        color: #444444;
+      }
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "cult dis"
+      "com  dis"
+      "edu edu"
+      "sal hue";
+    height: 100vh;
+    color: white;
+    background-color: red;
+
+    div {
+      padding-inline: 4em;
+      padding-block: 3.5em;
+      p {
+        font-size: 16px;
+      }
+    }
+
+    #grid__cul {
+      grid-area: cult;
+      background-color: #f2ba34;
+    }
+    #grid__dis {
+      grid-area: dis;
+      background-color: #4b4773;
+    }
+    #grid__com {
+      grid-area: com;
+      background-color: #1bb0af;
+    }
+    #grid__edu {
+      grid-area: edu;
+      background-color: #d03b81;
+    }
+    #grid__sal {
+      grid-area: sal;
+      background-color: #e44e55;
+    }
+    #grid__hue {
+      grid-area: hue;
+      background-color: #80be41;
+    }
+  }
+}
+
+
+
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  height: 65vh;
+  grid-area: contact;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15028018043154767) 0%,
+    rgba(0, 0, 0, 0) 17%
+  );
+
+  form {
+    font-family: Muli;
+    font-size: 14px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1/2fr 1fr;
+    input {
+      height: 20px;
+      border: 0.51px solid rgba(68, 68, 68, 0.2);
+      border-radius: 4px;
+      padding-inline-start: 7px;
+      padding-block: 15px;
+      margin-block-end: 25px;
+    }
+    .full-width {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      width: 50vw;
+      input {
+        width: 100%;
+        border: 0.51px solid rgba(68, 68, 68, 0.2);
+        border-radius: 4px;
+        padding-inline-start: 7px;
+      }
+      textarea {
+        width: 100%;
+        border: 0.51px solid rgba(68, 68, 68, 0.2);
+        border-radius: 4px;
+        padding-block-start: 15px;
+        padding-block-end: 30px;
+        padding-inline: 15px;
+      }
+    }
+
+    .half-width {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+    }
+  }
+
+  .contact__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+    margin-block-end: 100px;
+
+    h2 {
+      color: #d3106c;
+      font-size: 30px;
+      font-family: Muli-Light;
+      font-weight: 100;
+      margin-block-end: 20px;
+    }
+  }
+}
+
+.footer__colors {
+  display: flex;
+  width: 100vw;
+  .yellow {
+    @include colors(#fdb918);
+  }
+  .blue {
+    @include colors(#42c5c5);
+  }
+  .purple {
+    @include colors(#555289);
+  }
+  .pink {
+    @include colors(#e8298c);
+  }
+  .red {
+    @include colors(#e51c24);
+  }
+  .green {
+    @include colors(#7dbb3e);
+  }
+}
+
+.footer__newsletter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block-start: 35px;
+.footer__newsletter_form{
+  display: flex;
+  align-items: center;
+  height: 10px;
+  width: 200px;
+  margin-inline-start: -10.5%;
+  margin-block-end: 50px;
+  label{
+    color: #444444;
+    font-family: Muli;
+  }
+  input{
+    appearance: none;
+    border: 0.51px solid rgba(68, 68, 68, 0.2);
+    border-radius: 4px;
+    padding-block: 10px;
+    padding-inline-start: 15px;
+    width: 22em;
+  }
+  
+  button{
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family: Muli;
+    background-color: #D3106C;
+    padding-block: 10px;
+    padding-inline: 15px;
+    margin-inline-start: 15px;
+    margin-block-start: 20px;
+    border: none;
+    border-radius: 4px;
+
+    :hover{
+      cursor: pointer;
+    }
+  }
+}
+
+  h1 {
+    font-family: Muli-Extra-Bold;
+    font-size: 50px;
+    height: 100px;
+    background-color: red;
+    background-image:
+      linear-gradient(
+        to right, 
+        #FA823C,
+        #f2b244 0%,
+        #FA823C 0%,
+        #FA823C 28.5%,
+        #f2b244 15.6%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-background-clip: text;
+      -moz-text-fill-color: transparent;
+  }
+
+  .footer__newsletter_socialmedia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block-end: 20px;
+    div{
+      display: flex;
+      a{
+        margin-inline: 4px;
+        :hover{
+          cursor: pointer;
+        }
+      }
+    }
+
+    p{
+      font-family: Avenir-Book;
+      color: rgba(68, 68, 68, 0.733);
+      margin-block-end: 2em;
+    }
+
+    span{
+      background-color: rgba(68,68,68,0.08);
+      width: 850%;
+      height: 1px;
+    }
+  }
+}
+
+.footer__bottom{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 30px;
+  color: #434343bc;
+  font-family: Avenir-Light;
+}
